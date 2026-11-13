@@ -274,6 +274,7 @@ void mp_load_builtin_scripts(struct MPContext *mpctx)
     struct m_config_option *co = m_config_get_co(mpctx->mconfig, bstr0("d3d11-exclusive-fs"));
     bool context_menu = mpctx->opts->lua_load_context_menu || (co && *(bool *)co->data);
     load_builtin_script(mpctx, 8, context_menu, "@context_menu.lua");
+    load_builtin_script(mpctx, 9, mpctx->opts->lua_load_trim, "@trim.lua");
 }
 
 bool mp_load_scripts(struct MPContext *mpctx)

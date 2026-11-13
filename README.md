@@ -96,7 +96,10 @@ Example:
 
     meson setup build
     meson compile -C build
-    meson install -C build
+    make install
+
+The `make install` convenience target copies the compiled CLI to the Homebrew
+prefix on macOS, or `/usr/local` otherwise. Set `PREFIX` to install elsewhere.
 
 For libplacebo, meson can use a git check out as a subproject for a convenient
 way to compile mpv if a sufficient libplacebo version is not easily available

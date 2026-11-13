@@ -202,6 +202,7 @@ typedef struct MPOpts {
     bool lua_load_positioning;
     bool lua_load_commands;
     bool lua_load_context_menu;
+    bool lua_load_trim;
 
     bool auto_load_scripts;
 

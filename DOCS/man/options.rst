@@ -1129,6 +1129,15 @@ Program Behavior
     Enable the builtin script that provides various keybindings to pan videos
     and images (default: yes).
 
+``--load-trim=<yes|no>``
+    Enable the builtin script for trimming local video files without
+    re-encoding (default: yes). ``Ctrl+i`` marks the start and ``Ctrl+o`` marks
+    the end. Each mark snaps playback to the nearest video keyframe; marking the
+    end starts a stream-copy trim and writes a new file to the temporary
+    directory (``$TMPDIR``, ``$TEMP``, ``$TMP``, or ``/tmp``). The ``ffprobe``
+    and ``ffmpeg`` executables must be available in ``PATH``. Use
+    ``Ctrl+Shift+x`` to clear the marks.
+
 ``--player-operation-mode=<cplayer|pseudo-gui>``
     For enabling "pseudo GUI mode", which means that the defaults for some
     options are changed. This option should not normally be used directly, but
