@@ -198,11 +198,7 @@ local function mark(which)
         local end_time = out_mark
         osd(string.format("Trim: %.3f–%.3f s; saving…", start_time, end_time))
 
-        -- Write to the temp directory; the source's directory may be read-only.
-        local directory = os.getenv("TMPDIR") or os.getenv("TEMP") or os.getenv("TMP") or "/tmp"
-        if not directory:find("[/\\]$") then
-            directory = directory .. "/"
-        end
+        local directory = source:match("^(.*[/\\])") or "./"
         local filename = source:match("([^/\\]+)$") or source
         local stem, extension = filename:match("^(.*)(%.[^%.]+)$")
         if not stem then
